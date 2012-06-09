@@ -8,7 +8,7 @@ Warning: This plugin is currently under development. It is not in a stable state
 Download
 ---
 
-[Download Stacked Gallery] (https://github.com/adrazich/parallaxification/downloads)
+[Download Parallaxification] (https://github.com/adrazich/parallaxification/downloads)
 
 Demo
 ---
