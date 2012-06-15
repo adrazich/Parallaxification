@@ -1,13 +1,14 @@
-// jquery.parallaxification.js - Parallaxification is a jQuery gallery plugin for easy parallax scrolling including infinite scrolling.
-// Version: 0.6 alpha - this plugin is currently under development
-// Author: Anna Drazich
-// Website: http://www.initanna.com/parallaxification/
-// Github: https://github.com/adrazich/parallaxification
-//
-// Copyright (c) 2012 Anna Drazich
-// Dual licensed under the MIT and GPL licenses.
-// MIT License: https://github.com/adrazich/parallaxification/blob/master/MIT-License.txt
-// GPL License: https://github.com/adrazich/parallaxification/blob/master/GPL-License.txt
+/**
+* Parallaxification is a jQuery gallery plugin for easy parallax scrolling including infinite scrolling.
+* \version 0.6 alpha - this plugin is currently under development
+* \author Anna Drazich
+* \copyright (c) 2012 Anna Drazich
+* Dual licensed under the MIT and GPL licenses.
+* MIT License: https://github.com/adrazich/parallaxification/blob/master/MIT-License.txt
+* GPL License: https://github.com/adrazich/parallaxification/blob/master/GPL-License.txt
+* Website: http://www.initanna.com/parallaxification/
+* Github: https://github.com/adrazich/parallaxification
+*/
 
 function CalculateSpeed(z){
   // convert to a range of 0-100
@@ -30,7 +31,7 @@ function CalculateSpeed(z){
       z:null,
       useZSpeed:false,
       direction:'horizontal',
-      easing:'linear',//'easeInOutQuad',
+      easing:'linear',
       useVelocity:false,
       speed:500,
       animationSpeed:500,
@@ -87,7 +88,7 @@ function CalculateSpeed(z){
       $(window).on('mousewheel', function(e, delta){
         // are we scrolling still?
         clearTimeout($.data(this, 'timer-'+settings.selector));
-        $.data(this, 'timer-'+settings.selector, setTimeout(function() {
+        $.data(this, 'timer-'+settings.selector, setTimeout(function(){
           // scrolling has stopped
           object.animating = false;
           animationEnd();
@@ -119,12 +120,11 @@ function CalculateSpeed(z){
       ////////////////////////////////////
       // Updates
       ////////////////////////////////////
-      
-      $(window).everyTime(250, function(){
-        if (object.animating){
-          UpdateClones();
-        }
-      });
+	  setInterval(function(){
+		if (object.animating){
+		  UpdateClones();
+		}
+	  }, 250);
       
       ////////////////////////////////////
       // Clones
@@ -135,11 +135,7 @@ function CalculateSpeed(z){
         if (settings.repeat){
           clones = { begin:0, end:0, number: { side:0, screen:1 }, animate:{ to:0, curr:0 } };
           
-          console.log('begin '+clones.begin+' left '+$(settings.selector).eq(clones.begin).offset().left+' end '+clones.end+' left '+$(settings.selector).eq(clones.end).offset().left);
-          
-          UpdateClones();
-          
-          console.log('begin '+clones.begin+' left '+$(settings.selector).eq(clones.begin).offset().left+' end '+clones.end+' left '+$(settings.selector).eq(clones.end).offset().left);
+		  UpdateClones();
           
           // adding extra comfy room
           AddClone(true);
