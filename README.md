@@ -13,7 +13,7 @@ Download
 Demo
 ---
 
-You can view a demo at [http://www.initanna.com/parallaxification/] (http://www.initanna.com/parallaxification).
+You can view a demo at [http://www.initanna.com/parallaxification] (http://www.initanna.com/parallaxification).
 
 Browser Support
 ---
